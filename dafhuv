@@ -4951,7 +4951,7 @@ Settings = {
     
     -- Plant & Harvest
     PlantEnabled = false,
-    PlantRange = 20,
+    PlantRange = 30,
     PlantDelay = 0.001,
     PlantFruit = { Bloodfruit = true },
     HarvestEnabled = false,
@@ -4960,7 +4960,7 @@ Settings = {
     TweenToBush = false,
     TweenToBushAndBox = false,
     PlantingTweenMode = "SmoothWalk",
-    PlantingTweenSpeed = 18,
+    PlantingTweenSpeed = 19,
     TweenRange = 150,
     FarmingTweenSpeed = 100,
     CacheAmount = 20,
