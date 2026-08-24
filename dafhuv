@@ -4951,7 +4951,7 @@ Settings = {
     
     -- Plant & Harvest
     PlantEnabled = false,
-    PlantRange = 30,
+    PlantRange = 25,
     PlantDelay = 0.001,
     PlantFruit = { Bloodfruit = true },
     HarvestEnabled = false,
