@@ -27999,7 +27999,7 @@ do -- AsterWebhook
             'game:GetService("TeleportService"):TeleportToPlaceInstance(%d, "%s", game.Players.LocalPlayer)',
             placeId, jobId)
         return {
-            { name = "Server Link", value = string.format("inline = false },
+            { name = "Server Link", value = string.format("inline = false" },
             { name = "Job Id", inline = false },
             { name = "Join Script (run in executor)", value = "```lua\n" .. joinScript .. "\n```", inline = false },
         }
