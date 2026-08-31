@@ -1,4 +1,4 @@
-setclipboard("https://discord.gg/cn6PyydNG")
+setclipboard("ti lox")
 
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
