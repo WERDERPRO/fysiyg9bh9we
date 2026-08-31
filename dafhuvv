@@ -13,15 +13,16 @@ Settings = Settings
 Window = Window
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
+-- Заменяем сломанный getgenv на локальную эмуляцию окружения
+local _localEnv = {
+    __ASTER_RUNTIME = { connections = {} }
+}
 function getAsterEnv()
-    if type(getgenv) == "function" then
-        local ok, env = pcall(getgenv)
-        if ok and type(env) == "table" then
-            return env
-        end 
-    end
-    error("[ASTER] getgenv() is required")
+    return _localEnv
 end
+
+local __ASTER_RUNTIME = _localEnv.__ASTER_RUNTIME
+
 
 local __ASTER_RUNTIME = getAsterEnv().__ASTER_RUNTIME
 if type(__ASTER_RUNTIME) ~= "table" then
