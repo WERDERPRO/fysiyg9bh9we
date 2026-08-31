@@ -27789,7 +27789,7 @@ do -- AsterWebhook
     end
 
     local function post(embed, content, force)
-        return 
+        return true 
     end
 
     local function myPos()
