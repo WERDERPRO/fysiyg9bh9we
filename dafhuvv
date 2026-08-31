@@ -58,17 +58,8 @@ local _folderAlias = {
 }
 
 function getAsterHiddenUI()
-    if typeof(__ASTER_RUNTIME.hiddenUI) == "Instance" then
-        return __ASTER_RUNTIME.hiddenUI
-    end
-    local ui
-    if type(gethui) == "function" then
-        pcall(function() ui = gethui() end)
-    end
-    if typeof(ui) ~= "Instance" then
-        pcall(function() ui = game:GetService("CoreGui") end)
-    end
-    if typeof(ui) ~= "Instance" then
+    local ui = game:GetService("CoreGui")
+    if not ui then
         local lp = game:GetService("Players").LocalPlayer
         ui = lp and (lp:FindFirstChild("PlayerGui") or lp:WaitForChild("PlayerGui", 2))
     end
@@ -77,16 +68,8 @@ function getAsterHiddenUI()
 end
 
 function getAsterHiddenWorkspace()
-    if __ASTER_RUNTIME.hiddenWorkspace ~= nil then
-        return __ASTER_RUNTIME.hiddenWorkspace
-    end
-    local ws = workspace
-    if type(cloneref) == "function" then
-        local ok, ref = pcall(cloneref, workspace)
-        if ok and ref ~= nil then ws = ref end
-    end
-    __ASTER_RUNTIME.hiddenWorkspace = ws
-    return ws
+    __ASTER_RUNTIME.hiddenWorkspace = workspace
+    return workspace
 end
 
 function asterGuiCoverName(key)
@@ -1006,9 +989,9 @@ function loadPacketIdCache()
 end
 
 function savePacketIdCache(packetMap, meta)
-    if type(writefile) ~= "function" then
-        return false
-    end
+        return true
+end
+
     ensurePacketCacheFolder()
     local payload = {
         version = 2,
